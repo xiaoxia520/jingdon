@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+
+    <!-- 导入css和js文件 -->
+    <link rel="stylesheet" href="./js/swiper/swiper.min.css">
+    <!-- <script src="./js/swiper/swiper.min.js"></script> -->
+
+    <script src="./js/jquery-3.1.1.min.js"></script>
+
+   
+</head>
+<body>
+    <div class="nav">
+        <a href="" class="logo">logo</a>
+        <input type="text" class="searchbox">
+        <a href="" class="login">登录</a>
+    </div>
+    <div class="main">
+        <div class="banner">
+            <div class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide"><a href=""><img src="./images/l1.jpg" alt=""></a></li>
+                    <li class="swiper-slide"><a href=""><img src="./images/l2.jpg" alt=""></a></li>
+                    <li class="swiper-slide"><a href=""><img src="./images/l3.jpg" alt=""></a></li>
+                    <li class="swiper-slide"><a href=""><img src="./images/l4.jpg" alt=""></a></li>
+                    <li class="swiper-slide"><a href=""><img src="./images/l5.jpg" alt=""></a></li>
+                    <li class="swiper-slide"><a href=""><img src="./images/l6.jpg" alt=""></a></li>
+                    <li class="swiper-slide"><a href=""><img src="./images/l7.jpg" alt=""></a></li>
+                    <li class="swiper-slide"><a href=""><img src="./images/l8.jpg" alt=""></a></li>
+                </ul>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+            
+        <div class="category">
+              <ul>
+                <li><a href=""><img src="./images/nav0.png" alt=""></a>
+                    <p>分类</p>
+                </li>
+                <li>
+                        <a href=""><img src="./images/nav1.png" alt=""></a>
+                        <p>分类</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/nav2.png" alt=""></a>
+                        <p>分类</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/nav3.png" alt=""></a>
+                        <p>分类</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/nav4.png" alt=""></a>
+                        <p>分类</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/nav5.png" alt=""></a>
+                        <p>分类</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/nav6.png" alt=""></a>
+                        <p>分类</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="./images/nav7.png" alt=""></a>
+                        <p>分类</p>
+                    </li>
+              </ul>
+        </div>
+        <div class="secondkill">
+            <div class="bar">
+                <span class="kill">掌上秒杀</span>
+                <span class="time">0</span>
+                <span class="time">5</span>
+                <span class="colon">:</span>
+                <span class="time">0</span>
+                <span class="time">5</span>
+                <span class="colon">:</span>            
+                <span class="time">3</span>
+                <span class="time">5</span>
+                <span class="more">更多</span>
+            </div>
+            <div class="goods">
+                <a href=""><img src="./images/detail01.jpg" alt=""></a>
+                <a href=""><img src="./images/detail01.jpg" alt=""></a>
+                <a href=""><img src="./images/detail01.jpg" alt=""></a>
+            </div>
+            <div class="market">
+                <div class="bar">
+                    <span>京东超市</span>
+                </div>
+                <div class="goods">
+                    <div class="left">
+                        <a href=""><img src="./images/cp2.jpg" alt=""></a>
+                        <a href=""><img src="./images/cp3.jpg" alt=""></a>
+                    </div>
+                        
+                    <div class="right">
+                        <a href=""><img src="./images/cp1.jpg" alt=""></a>
+                    </div>
+                       
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+    $(function(){
+        $(window).scroll(function(){
+            //拿到当前window的滚动的高度
+            var scrollTop=$(this).scrollTop();
+            console.log(scrollTop);
+
+            var maxTop=800;
+            //三目运算符
+            scrollTop=scrollTop>maxTop?maxTop:scrollTop;
+
+            //计算alpha的值
+            var alpha=(maxTop-scrollTop)/maxTop;
+
+            //用jquery来修改nav的背景色opacity
+            $(".nav").css({backgroundColor: "rgba(134, 23, 39, "+alpha+")"})
+        });
+    })
+</script>
+<!-- 
+    注意点： 
+    在sass中， & 代表父元素的点位符， 前面有冒号的伪元素， 在写sass的时候，都要使用 & 
+ -->
+ <script src="./js/swiper/swiper.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+      }
+    });
+</script>
